@@ -44,12 +44,12 @@ function buildBarChart(sample) {
         let value = sampleInfo.filter(result => result.id == sample);
 
         // Get the first index from the array
-        let valueData = value[0];
+        let Data = value[0];
 
         // Get the otu_ids, lables, and sample values
-        let sample_values = valueData.sample_values;
-        let otu_ids = valueData.otu_ids;
-        let otu_labels = valueData.otu_labels;
+        let sample_values = Data.sample_values;
+        let otu_ids = Data.otu_ids;
+        let otu_labels = Data.otu_labels;
 
         // Log the data to the console
         console.log(otu_ids,otu_labels,sample_values);
@@ -86,12 +86,12 @@ function buildBubbleChart(sample) {
         let value = sampleInfo.filter(result => result.id == sample);
 
         // Get the first index from the array
-        let valueData = value[0];
+        let Data = value[0];
 
         // Get the otu_ids, lables, and sample values
-        let sample_values = valueData.sample_values;
-        let otu_ids = valueData.otu_ids;
-        let otu_labels = valueData.otu_labels;
+        let sample_values = Data.sample_values;
+        let otu_ids = Data.otu_ids;
+        let otu_labels = Data.otu_labels;
 
         // Log the data to the console
         console.log(otu_ids,otu_labels,sample_values);
@@ -100,7 +100,9 @@ function buildBubbleChart(sample) {
         let trace = {
             x: otu_ids ,
             y: sample_values,
-            mode: 'markers',
+            mode: 'markers+text',
+            //text: otu_labels,
+            //textposition: 'top center',
             marker: {
                 size: sample_values,
                 color: otu_ids,
